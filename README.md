@@ -41,8 +41,8 @@ The core Excel workbook that serves as the master data contains the following da
 * **ZipCode** - zip code in which the brewery is located; from the "Business Entities in Colorado" dataset or the brewery's website
 * **Municipality_DOLA_LG_ID** - 5-digit identifier used by Colorado's [Department of Local Affairs (DOLA)](https://dola.colorado.gov/lgis/municipalities.jsf) for the municipality in which the brewery is located, to link DOLA datasets
 * **Municipality_DOLA_LG_ID_Flag** - data status of Municipality_DOLA_LG_ID values; see more detail below
-* **Municipal_WaterProvider_OWF_ID** - unique text identifier of the municipal water provider that provides water to the brewery; created by OWF to ensure that one type of ID contains values for every brewery
-* **Municipal_WaterProvider_OWF_ID** - data status of Municipal_WaterProvider_OWF_ID values; see more detail below
+* **Municipal_WaterProvider_OWF_ID** - unique text identifier of the municipal water provider that provides water to the brewery; created by OWF
+* **Municipal_WaterProvider_OWF_ID_Flag** - data status of Municipal_WaterProvider_OWF_ID values; see more detail below
 * **Latitude** - latitude of brewery's point location in decimal degrees
 * **Longitude** - longitude of brewery's point location in decimal degrees
 * **Lat_Long_Flag** - indication of how latitude and longitude were determined; g1 = coordinates are based on the physical address of the brewery
@@ -83,6 +83,7 @@ Other worksheets within the workbook contain the following:
 	* Wastewater - amount of water returned to the stream
 	* Consumptive Use - Water Deliveries subtracted by Wastewater
 	* Efficiency - Consumptive Use divided by Beer Production
+
 This worksheet is organized so that each year of data associated with a brewery is its own record.  Therefore, the same brewery may be listed in more than one row and be associated with a different year of data.  This will allow for the establishment of one-to-many relationships when linking to and processing other datasets.
 
 * **ChangeLog** worksheet indicates any changes made to the dataset, the date they occurred and who made the changes.
