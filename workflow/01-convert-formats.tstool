@@ -1,0 +1,16 @@
+# Convert brewery data from Excel to geojson and csv formats.
+#
+StartLog(LogFile="results/convert-formats.tstool.log")
+#
+#  Filter out rows with empty BreweryName in case there are extra rows.
+#SetDebugLevel(LogFileLevel=1)
+ReadTableFromExcel(TableID="Breweries",InputFile="../data/co-breweries.xlsx",Worksheet="Brewery",ExcelColumnNames=FirstRowInRange,ColumnExcludeFilters="BreweryName:",ExcelIntegerColumns="BusinessEntity_ID,ZipCode,Formation_Year",ExcelTextColumns="Municipality_DOLA_LG_ID,WaterSource_GNIS_ID")
+#SetDebugLevel(ScreenLevel=0,LogFileLevel=0)
+WriteTableToGeoJSON(TableID="Breweries",OutputFile="../data/co-breweries.geojson",LongitudeColumn="Longitude",LatitudeColumn="Latitude")
+#
+# Save the csv file.
+WriteTableToDelimitedFile(TableID="Breweries",OutputFile="../data/co-breweries.csv",WriteHeaderComments=False)
+#
+# "Brewery_WaterUse_Relate" worksheet
+ReadTableFromExcel(TableID="Brewery-WaterUse",InputFile="../data/co-breweries.xlsx",Worksheet="Brewery_WaterUse_Relate",ExcelColumnNames=FirstRowInRange,ColumnExcludeFilters="BreweryName:",ExcelIntegerColumns="Year")
+WriteTableToDelimitedFile(TableID="Brewery-WaterUse",OutputFile="../data/co-breweries-wateruse-relate.csv",WriteHeaderComments=False)
