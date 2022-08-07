@@ -9,9 +9,9 @@ The initial focus is the Poudre Basin, but organizations for other areas will be
 
 The following files can be downloaded or used directly.
 
-| **Layer File** | **Description** |
-| -- | -- |
-| [`co-breweries.geojson`](co-breweries.geojson) | Colorado breweries. |
+| **Layer File** | **Description** | **View** |
+| -- | -- | -- |
+| [`co-breweries.geojson`](co-breweries.geojson) | Colorado breweries. | [View](https://gavinr.github.io/geojson-viewer/?url=https://data.openwaterfoundation.org/state/co/owf/breweries/co-breweries.geojson) |
 
 ## Workflow ##
 
